@@ -1,0 +1,1595 @@
+[
+  {
+    "id": 32531,
+    "season": 1,
+    "name": "The Gang Gets Racist",
+    "number": 1,
+    "airdate": "2005-08-04",
+    "startTime": "12:45 AM",
+    "startDay": "Thursday"
+  },
+  {
+    "id": 32532,
+    "season": 1,
+    "name": "Charlie Wants an Abortion",
+    "number": 2,
+    "airdate": "2005-08-11",
+    "startTime": "11:45 AM",
+    "startDay": "Tuesday"
+  },
+  {
+    "id": 32533,
+    "season": 1,
+    "name": "Underage Drinking: A National Concern",
+    "number": 3,
+    "airdate": "2005-08-16",
+    "startTime": "9:45 pm",
+    "startDay": "Friday"
+  },
+  {
+    "id": 32534,
+    "season": 1,
+    "name": "Charlie Has Cancer",
+    "number": 4,
+    "airdate": "2005-08-23",
+    "startTime": "12:40 pm",
+    "startDay": "Tuesday"
+  },
+  {
+    "id": 32535,
+    "season": 1,
+    "name": "Gun Fever",
+    "number": 5,
+    "airdate": "2005-08-30",
+    "startTime": "11:25 am",
+    "startDay": "friday"
+  },
+  {
+    "id": 32536,
+    "season": 1,
+    "name": "The Gang Finds a Dead Guy",
+    "number": 6,
+    "airdate": "2005-09-06",
+    "startTime": "10:25 am",
+    "startDay": "Friday"
+  },
+  {
+    "id": 32537,
+    "season": 1,
+    "name": "Charlie Got Molested",
+    "number": 7,
+    "airdate": "2005-09-13",
+    "startTime": "11:15 am",
+    "startDay": "monday"
+  },
+  {
+    "id": 32538,
+    "season": 2,
+    "name": "Charlie Gets Crippled",
+    "number": 1,
+    "airdate": "2006-06-29",
+    "startTime": "10:15 pm",
+    "startDay": "monday"
+  },
+  {
+    "id": 32539,
+    "season": 2,
+    "name": "The Gang Goes Jihad",
+    "number": 2,
+    "airdate": "2006-06-29",
+    "startTime": "3:30 pm",
+    "startDay": "monday"
+  },
+  {
+    "id": 32540,
+    "season": 2,
+    "name": "Dennis and Dee Go on Welfare",
+    "number": 3,
+    "airdate": "2006-07-06",
+    "startTime": "4:30 pm",
+    "startDay": "wednesday"
+  },
+  {
+    "id": 32541,
+    "season": 2,
+    "name": "Mac Bangs Dennis' Mom",
+    "number": 4,
+    "airdate": "2006-07-06",
+    "startTime": "4:30 pm",
+    "startDay": "friday"
+  },
+  {
+    "id": 32542,
+    "season": 2,
+    "name": "Hundred Dollar Baby",
+    "number": 5,
+    "airdate": "2006-07-13",
+    "startTime": "11:30 pm",
+    "startDay": "tuesday"
+  },
+  {
+    "id": 32543,
+    "season": 2,
+    "name": "The Gang Gives Back",
+    "number": 6,
+    "airdate": "2006-07-20",
+    "startTime": "11:15 pm",
+    "startDay": "monday"
+  },
+  {
+    "id": 32544,
+    "season": 2,
+    "name": "The Gang Exploits a Miracle",
+    "number": 7,
+    "airdate": "2006-07-27",
+    "startTime": "11:00 am",
+    "startDay": "tuesday"
+  },
+  {
+    "id": 32545,
+    "season": 2,
+    "name": "The Gang Runs for Office",
+    "number": 8,
+    "airdate": "2006-08-03",
+    "startTime": "10:15 am",
+    "startDay": "wednesday"
+  },
+  {
+    "id": 32546,
+    "season": 2,
+    "name": "Charlie Goes America All Over Everybody's Ass",
+    "number": 9,
+    "airdate": "2006-08-10",
+    "startTime": "2:30 am",
+    "startDay": "saturday"
+  },
+  {
+    "id": 32547,
+    "season": 2,
+    "name": "Dennis and Dee Get a New Dad",
+    "number": 10,
+    "airdate": "2006-08-17",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32548,
+    "season": 3,
+    "name": "The Gang Finds a Dumpster Baby",
+    "number": 1,
+    "airdate": "2007-09-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32549,
+    "season": 3,
+    "name": "The Gang Gets Invincible",
+    "number": 2,
+    "airdate": "2007-09-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32550,
+    "season": 3,
+    "name": "Dennis and Dee's Mom is Dead",
+    "number": 3,
+    "airdate": "2007-09-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32551,
+    "season": 3,
+    "name": "The Gang Gets Held Hostage",
+    "number": 4,
+    "airdate": "2007-09-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32552,
+    "season": 3,
+    "name": "The Aluminum Monster vs. Fatty Magoo",
+    "number": 5,
+    "airdate": "2007-09-27",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32553,
+    "season": 3,
+    "name": "The Gang Solves the North Korea Situation",
+    "number": 6,
+    "airdate": "2007-09-27",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32554,
+    "season": 3,
+    "name": "The Gang Sells Out",
+    "number": 7,
+    "airdate": "2007-10-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32555,
+    "season": 3,
+    "name": "Frank Sets Sweet Dee on Fire",
+    "number": 8,
+    "airdate": "2007-10-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32556,
+    "season": 3,
+    "name": "Sweet Dee's Dating a Retarded Person",
+    "number": 9,
+    "airdate": "2007-10-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32557,
+    "season": 3,
+    "name": "Mac is a Serial Killer",
+    "number": 10,
+    "airdate": "2007-10-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32558,
+    "season": 3,
+    "name": "Dennis Looks Like a Registered Sex Offender",
+    "number": 11,
+    "airdate": "2007-10-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32559,
+    "season": 3,
+    "name": "The Gang Gets Whacked: Part 1",
+    "number": 12,
+    "airdate": "2007-11-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32560,
+    "season": 3,
+    "name": "The Gang Gets Whacked: Part 2",
+    "number": 13,
+    "airdate": "2007-11-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32561,
+    "season": 3,
+    "name": "Bums: Making a Mess All Over the City",
+    "number": 14,
+    "airdate": "2007-11-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32562,
+    "season": 3,
+    "name": "The Gang Dances Their Asses Off",
+    "number": 15,
+    "airdate": "2007-11-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32563,
+    "season": 4,
+    "name": "Mac and Dennis: Manhunters",
+    "number": 1,
+    "airdate": "2008-09-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32564,
+    "season": 4,
+    "name": "The Gang Solves the Gas Crisis",
+    "number": 2,
+    "airdate": "2008-09-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32565,
+    "season": 4,
+    "name": "America's Next Top Paddy's Billboard Model Contest",
+    "number": 3,
+    "airdate": "2008-09-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32566,
+    "season": 4,
+    "name": "Mac's Banging the Waitress",
+    "number": 4,
+    "airdate": "2008-09-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32567,
+    "season": 4,
+    "name": "Mac and Charlie Die",
+    "number": 5,
+    "airdate": "2008-10-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32568,
+    "season": 4,
+    "name": "Mac and Charlie Die Part 2",
+    "number": 6,
+    "airdate": "2008-10-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32569,
+    "season": 4,
+    "name": "Who Pooped the Bed?",
+    "number": 7,
+    "airdate": "2008-10-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32570,
+    "season": 4,
+    "name": "Paddy's Pub: The Worst Bar in Philadelphia",
+    "number": 8,
+    "airdate": "2008-10-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32571,
+    "season": 4,
+    "name": "Dennis Reynolds: An Erotic Life",
+    "number": 9,
+    "airdate": "2008-10-23",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32572,
+    "season": 4,
+    "name": "Sweet Dee Has a Heart Attack",
+    "number": 10,
+    "airdate": "2008-10-30",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32573,
+    "season": 4,
+    "name": "The Gang Cracks the Liberty Bell",
+    "number": 11,
+    "airdate": "2008-11-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32574,
+    "season": 4,
+    "name": "The Gang Gets Extreme: Home Makeover Edition",
+    "number": 12,
+    "airdate": "2008-11-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32575,
+    "season": 4,
+    "name": "The Nightman Cometh",
+    "number": 13,
+    "airdate": "2008-11-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32576,
+    "season": 5,
+    "name": "The Gang Exploits the Mortgage Crisis",
+    "number": 1,
+    "airdate": "2009-09-17",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32577,
+    "season": 5,
+    "name": "The Gang Hits the Road",
+    "number": 2,
+    "airdate": "2009-09-24",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32578,
+    "season": 5,
+    "name": "The Great Recession",
+    "number": 3,
+    "airdate": "2009-10-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32579,
+    "season": 5,
+    "name": "The Gang Gives Frank an Intervention",
+    "number": 4,
+    "airdate": "2009-10-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32580,
+    "season": 5,
+    "name": "The Waitress is Getting Married",
+    "number": 5,
+    "airdate": "2009-10-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32581,
+    "season": 5,
+    "name": "The World Series Defense",
+    "number": 6,
+    "airdate": "2009-10-22",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32582,
+    "season": 5,
+    "name": "The Gang Wrestles for the Troops",
+    "number": 7,
+    "airdate": "2009-10-29",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32583,
+    "season": 5,
+    "name": "Paddy's Pub: Home of the Original Kitten Mittens",
+    "number": 8,
+    "airdate": "2009-11-05",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32584,
+    "season": 5,
+    "name": "Mac and Dennis Break Up",
+    "number": 9,
+    "airdate": "2009-11-12",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32585,
+    "season": 5,
+    "name": "The D.E.N.N.I.S. System",
+    "number": 10,
+    "airdate": "2009-11-19",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32586,
+    "season": 5,
+    "name": "Mac and Charlie Write a Movie",
+    "number": 11,
+    "airdate": "2009-12-03",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32587,
+    "season": 5,
+    "name": "The Gang Reignites the Rivalry",
+    "number": 12,
+    "airdate": "2009-12-10",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32588,
+    "season": 6,
+    "name": "Mac Fights Gay Marriage",
+    "number": 1,
+    "airdate": "2010-09-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32589,
+    "season": 6,
+    "name": "Dennis Gets Divorced",
+    "number": 2,
+    "airdate": "2010-09-23",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32590,
+    "season": 6,
+    "name": "The Gang Buys a Boat",
+    "number": 3,
+    "airdate": "2010-09-30",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32591,
+    "season": 6,
+    "name": "Mac's Big Break",
+    "number": 4,
+    "airdate": "2010-10-07",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32592,
+    "season": 6,
+    "name": "Mac and Charlie: White Trash",
+    "number": 5,
+    "airdate": "2010-10-14",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32593,
+    "season": 6,
+    "name": "Mac's Mom Burns Her House Down",
+    "number": 6,
+    "airdate": "2010-10-21",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32594,
+    "season": 6,
+    "name": "Who Got Dee Pregnant?",
+    "number": 7,
+    "airdate": "2010-10-28",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32595,
+    "season": 6,
+    "name": "The Gang Gets a New Member",
+    "number": 8,
+    "airdate": "2010-11-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32596,
+    "season": 6,
+    "name": "Dee Reynolds: Shaping America's Youth",
+    "number": 9,
+    "airdate": "2010-11-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32597,
+    "season": 6,
+    "name": "Charlie Kelly: King of the Rats",
+    "number": 10,
+    "airdate": "2010-11-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32598,
+    "season": 6,
+    "name": "The Gang Gets Stranded in the Woods",
+    "number": 11,
+    "airdate": "2010-12-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32599,
+    "season": 6,
+    "name": "Dee Gives Birth",
+    "number": 12,
+    "airdate": "2010-12-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32600,
+    "season": 6,
+    "name": "A Very Sunny Christmas",
+    "number": 13,
+    "airdate": "2010-12-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32601,
+    "season": 7,
+    "name": "Frank's Pretty Woman",
+    "number": 1,
+    "airdate": "2011-09-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32602,
+    "season": 7,
+    "name": "The Gang Goes to the Jersey Shore",
+    "number": 2,
+    "airdate": "2011-09-22",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32603,
+    "season": 7,
+    "name": "Frank Reynolds' Little Beauties",
+    "number": 3,
+    "airdate": "2011-09-29",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32604,
+    "season": 7,
+    "name": "Sweet Dee Gets Audited",
+    "number": 4,
+    "airdate": "2011-10-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32605,
+    "season": 7,
+    "name": "Frank's Brother",
+    "number": 5,
+    "airdate": "2011-10-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32606,
+    "season": 7,
+    "name": "The Storm of the Century",
+    "number": 6,
+    "airdate": "2011-10-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32607,
+    "season": 7,
+    "name": "Chardee MacDennis: The Game of Games",
+    "number": 7,
+    "airdate": "2011-10-27",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32608,
+    "season": 7,
+    "name": "The ANTI-Social Network",
+    "number": 8,
+    "airdate": "2011-11-03",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32609,
+    "season": 7,
+    "name": "The Gang Gets Trapped",
+    "number": 9,
+    "airdate": "2011-11-10",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32610,
+    "season": 7,
+    "name": "How Mac Got Fat",
+    "number": 10,
+    "airdate": "2011-11-17",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32611,
+    "season": 7,
+    "name": "Thunder Gun Express",
+    "number": 11,
+    "airdate": "2011-12-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32612,
+    "season": 7,
+    "name": "The High School Reunion",
+    "number": 12,
+    "airdate": "2011-12-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32613,
+    "season": 7,
+    "name": "The High School Reunion Part 2: The Gang's Revenge",
+    "number": 13,
+    "airdate": "2011-12-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32614,
+    "season": 8,
+    "name": "Pop-Pop: The Final Solution",
+    "number": 1,
+    "airdate": "2012-10-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32615,
+    "season": 8,
+    "name": "The Gang Recycles Their Trash",
+    "number": 2,
+    "airdate": "2012-10-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32616,
+    "season": 8,
+    "name": "The Maureen Ponderosa Wedding Massacre",
+    "number": 3,
+    "airdate": "2012-10-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32617,
+    "season": 8,
+    "name": "Charlie and Dee Find Love",
+    "number": 4,
+    "airdate": "2012-11-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32618,
+    "season": 8,
+    "name": "The Gang Gets Analyzed",
+    "number": 5,
+    "airdate": "2012-11-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32619,
+    "season": 8,
+    "name": "Charlie's Mom Has Cancer",
+    "number": 6,
+    "airdate": "2012-11-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32620,
+    "season": 8,
+    "name": "Frank's Back in Business",
+    "number": 7,
+    "airdate": "2012-11-29",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32621,
+    "season": 8,
+    "name": "Charlie Rules the World",
+    "number": 8,
+    "airdate": "2012-12-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32622,
+    "season": 8,
+    "name": "The Gang Dines Out",
+    "number": 9,
+    "airdate": "2012-12-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32623,
+    "season": 8,
+    "name": "Reynolds vs. Reynolds: The Cereal Defense",
+    "number": 10,
+    "airdate": "2012-12-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32624,
+    "season": 9,
+    "name": "The Gang Broke Dee",
+    "number": 1,
+    "airdate": "2013-09-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32625,
+    "season": 9,
+    "name": "Gun Fever Too: Still Hot",
+    "number": 2,
+    "airdate": "2013-09-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32626,
+    "season": 9,
+    "name": "The Gang Tries Desperately to Win an Award",
+    "number": 3,
+    "airdate": "2013-09-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32627,
+    "season": 9,
+    "name": "Mac and Dennis Buy a Timeshare",
+    "number": 4,
+    "airdate": "2013-09-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32628,
+    "season": 9,
+    "name": "Mac Day",
+    "number": 5,
+    "airdate": "2013-10-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32629,
+    "season": 9,
+    "name": "The Gang Saves the Day",
+    "number": 6,
+    "airdate": "2013-10-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32630,
+    "season": 9,
+    "name": "The Gang Gets Quarantined",
+    "number": 7,
+    "airdate": "2013-10-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32631,
+    "season": 9,
+    "name": "Flowers for Charlie",
+    "number": 8,
+    "airdate": "2013-10-23",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32632,
+    "season": 9,
+    "name": "The Gang Makes Lethal Weapon 6",
+    "number": 9,
+    "airdate": "2013-10-30",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 32633,
+    "season": 9,
+    "name": "The Gang Squashes Their Beefs",
+    "number": 10,
+    "airdate": "2013-11-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 92029,
+    "season": 10,
+    "name": "The Gang Beats Boggs",
+    "number": 1,
+    "airdate": "2015-01-14",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 101854,
+    "season": 10,
+    "name": "The Gang Group Dates",
+    "number": 2,
+    "airdate": "2015-01-21",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102468,
+    "season": 10,
+    "name": "Psycho Pete Returns",
+    "number": 3,
+    "airdate": "2015-01-28",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102469,
+    "season": 10,
+    "name": "Charlie Work",
+    "number": 4,
+    "airdate": "2015-02-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102470,
+    "season": 10,
+    "name": "The Gang Spies Like U.S.",
+    "number": 5,
+    "airdate": "2015-02-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102471,
+    "season": 10,
+    "name": "The Gang Misses the Boat",
+    "number": 6,
+    "airdate": "2015-02-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102472,
+    "season": 10,
+    "name": "Mac Kills His Dad",
+    "number": 7,
+    "airdate": "2015-02-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102473,
+    "season": 10,
+    "name": "The Gang Goes on Family Fight",
+    "number": 8,
+    "airdate": "2015-03-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 102474,
+    "season": 10,
+    "name": "Frank Retires",
+    "number": 9,
+    "airdate": "2015-03-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 140774,
+    "season": 10,
+    "name": "Ass Kickers United: Mac and Charlie Join a Cult",
+    "number": 10,
+    "airdate": "2015-03-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 541980,
+    "season": 11,
+    "name": "Chardee MacDennis 2: Electric Boogaloo",
+    "number": 1,
+    "airdate": "2016-01-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 541981,
+    "season": 11,
+    "name": "Frank Falls Out the Window",
+    "number": 2,
+    "airdate": "2016-01-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 541982,
+    "season": 11,
+    "name": "The Gang Hits the Slopes",
+    "number": 3,
+    "airdate": "2016-01-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 541983,
+    "season": 11,
+    "name": "Dee Made a Smut Film",
+    "number": 4,
+    "airdate": "2016-01-27",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552215,
+    "season": 11,
+    "name": "Mac & Dennis Move to the Suburbs",
+    "number": 5,
+    "airdate": "2016-02-03",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552216,
+    "season": 11,
+    "name": "Being Frank",
+    "number": 6,
+    "airdate": "2016-02-10",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552217,
+    "season": 11,
+    "name": "McPoyle vs. Ponderosa: The Trial of the Century",
+    "number": 7,
+    "airdate": "2016-02-17",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552218,
+    "season": 11,
+    "name": "Charlie Catches a Leprechaun",
+    "number": 8,
+    "airdate": "2016-02-24",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552219,
+    "season": 11,
+    "name": "The Gang Goes to Hell: Part 1",
+    "number": 9,
+    "airdate": "2016-03-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 552220,
+    "season": 11,
+    "name": "The Gang Goes to Hell: Part 2",
+    "number": 10,
+    "airdate": "2016-03-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 982770,
+    "season": 12,
+    "name": "The Gang Turns Black",
+    "number": 1,
+    "airdate": "2017-01-04",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1009073,
+    "season": 12,
+    "name": "The Gang Goes to a Water Park",
+    "number": 2,
+    "airdate": "2017-01-11",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1009074,
+    "season": 12,
+    "name": "Old Lady House: A Situation Comedy",
+    "number": 3,
+    "airdate": "2017-01-18",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1009075,
+    "season": 12,
+    "name": "Wolf Cola: A Public Relations Nightmare",
+    "number": 4,
+    "airdate": "2017-01-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019138,
+    "season": 12,
+    "name": "Making Dennis Reynolds a Murderer",
+    "number": 5,
+    "airdate": "2017-02-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019139,
+    "season": 12,
+    "name": "Hero or Hate Crime?",
+    "number": 6,
+    "airdate": "2017-02-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019140,
+    "season": 12,
+    "name": "PTSDee",
+    "number": 7,
+    "airdate": "2017-02-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019141,
+    "season": 12,
+    "name": "The Gang Tends Bar",
+    "number": 8,
+    "airdate": "2017-02-22",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019142,
+    "season": 12,
+    "name": "A Cricket's Tale",
+    "number": 9,
+    "airdate": "2017-03-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1019143,
+    "season": 12,
+    "name": "Dennis' Double Life",
+    "number": 10,
+    "airdate": "2017-03-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1486725,
+    "season": 13,
+    "name": "The Gang Makes Paddy's Great Again",
+    "number": 1,
+    "airdate": "2018-09-05",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1519183,
+    "season": 13,
+    "name": "The Gang Escapes",
+    "number": 2,
+    "airdate": "2018-09-12",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1519871,
+    "season": 13,
+    "name": "The Gang Beats Boggs: Ladies Reboot",
+    "number": 3,
+    "airdate": "2018-09-19",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1519872,
+    "season": 13,
+    "name": "Time's Up for the Gang",
+    "number": 4,
+    "airdate": "2018-09-26",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1525020,
+    "season": 13,
+    "name": "The Gang Gets New Wheels",
+    "number": 5,
+    "airdate": "2018-10-03",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1528563,
+    "season": 13,
+    "name": "The Gang Solves the Bathroom Problem",
+    "number": 6,
+    "airdate": "2018-10-10",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1532573,
+    "season": 13,
+    "name": "The Gang Does a Clip Show",
+    "number": 7,
+    "airdate": "2018-10-17",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1537756,
+    "season": 13,
+    "name": "Charlie's Home Alone",
+    "number": 8,
+    "airdate": "2018-10-24",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1537757,
+    "season": 13,
+    "name": "The Gang Wins the Big Game",
+    "number": 9,
+    "airdate": "2018-10-31",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1537782,
+    "season": 13,
+    "name": "Mac Finds His Pride",
+    "number": 10,
+    "airdate": "2018-11-07",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1674515,
+    "season": 14,
+    "name": "The Gang Gets Romantic",
+    "number": 1,
+    "airdate": "2019-09-25",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701017,
+    "season": 14,
+    "name": "Thunder Gun 4: Maximum Cool",
+    "number": 2,
+    "airdate": "2019-10-02",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701018,
+    "season": 14,
+    "name": "Dee Day",
+    "number": 3,
+    "airdate": "2019-10-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701019,
+    "season": 14,
+    "name": "The Gang Chokes",
+    "number": 4,
+    "airdate": "2019-10-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701021,
+    "season": 14,
+    "name": "The Gang Texts",
+    "number": 5,
+    "airdate": "2019-10-23",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701022,
+    "season": 14,
+    "name": "The Janitor Always Mops Twice",
+    "number": 6,
+    "airdate": "2019-10-30",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701023,
+    "season": 14,
+    "name": "The Gang Solves Global Warming",
+    "number": 7,
+    "airdate": "2019-11-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701025,
+    "season": 14,
+    "name": "Paddy's Has a Jumper",
+    "number": 8,
+    "airdate": "2019-11-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701024,
+    "season": 14,
+    "name": "A Woman's Right to Chop",
+    "number": 9,
+    "airdate": "2019-11-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 1701026,
+    "season": 14,
+    "name": "Waiting for Big Mo",
+    "number": 10,
+    "airdate": "2019-11-20",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2208803,
+    "season": 15,
+    "name": "2020: A Year in Review",
+    "number": 1,
+    "airdate": "2021-12-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2208804,
+    "season": 15,
+    "name": "The Gang Makes Lethal Weapon 7",
+    "number": 2,
+    "airdate": "2021-12-01",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2213098,
+    "season": 15,
+    "name": "The Gang Buys a Roller Rink",
+    "number": 3,
+    "airdate": "2021-12-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2213099,
+    "season": 15,
+    "name": "The Gang Replaces Dee with a Monkey",
+    "number": 4,
+    "airdate": "2021-12-08",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2216864,
+    "season": 15,
+    "name": "The Gang Goes to Ireland",
+    "number": 5,
+    "airdate": "2021-12-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2216865,
+    "season": 15,
+    "name": "The Gang's Still in Ireland",
+    "number": 6,
+    "airdate": "2021-12-15",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2219839,
+    "season": 15,
+    "name": "Dee Sinks in a Bog",
+    "number": 7,
+    "airdate": "2021-12-22",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2219840,
+    "season": 15,
+    "name": "The Gang Carries a Corpse Up a Mountain",
+    "number": 8,
+    "airdate": "2021-12-22",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2535925,
+    "season": 16,
+    "name": "The Gang Inflates",
+    "number": 1,
+    "airdate": "2023-06-07",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2545516,
+    "season": 16,
+    "name": "Frank Shoots Every Member of the Gang",
+    "number": 2,
+    "airdate": "2023-06-07",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2551610,
+    "season": 16,
+    "name": "The Gang Gets Cursed",
+    "number": 3,
+    "airdate": "2023-06-14",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2560614,
+    "season": 16,
+    "name": "Frank vs. Russia",
+    "number": 4,
+    "airdate": "2023-06-21",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2560615,
+    "season": 16,
+    "name": "Celebrity Booze: The Ultimate Cash Grab",
+    "number": 5,
+    "airdate": "2023-06-28",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2560616,
+    "season": 16,
+    "name": "Risk E. Rat's Pizza and Amusement Center",
+    "number": 6,
+    "airdate": "2023-07-05",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2560618,
+    "season": 16,
+    "name": "The Gang Goes Bowling",
+    "number": 7,
+    "airdate": "2023-07-12",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 2574335,
+    "season": 16,
+    "name": "Dennis Takes a Mental Health Day",
+    "number": 8,
+    "airdate": "2023-07-19",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3209312,
+    "season": 17,
+    "name": "The Gang F***s Up Abbott Elementary",
+    "number": 1,
+    "airdate": "2025-07-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3210694,
+    "season": 17,
+    "name": "Frank Is in a Coma",
+    "number": 2,
+    "airdate": "2025-07-09",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3280466,
+    "season": 17,
+    "name": "Mac and Dennis Become EMTs",
+    "number": 3,
+    "airdate": "2025-07-16",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3289200,
+    "season": 17,
+    "name": "Thought Leadership: A Corporate Conversation",
+    "number": 4,
+    "airdate": "2025-07-23",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3289230,
+    "season": 17,
+    "name": "The Gang Goes to a Dog Track",
+    "number": 5,
+    "airdate": "2025-07-30",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3289231,
+    "season": 17,
+    "name": "Overage Drinking: A National Concern",
+    "number": 6,
+    "airdate": "2025-08-06",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3289232,
+    "season": 17,
+    "name": "The Gang Gets Ready for Primetime",
+    "number": 7,
+    "airdate": "2025-08-13",
+    "startTime": "",
+    "startDay": ""
+  },
+  {
+    "id": 3289233,
+    "season": 17,
+    "name": "The Golden Bachelor Live",
+    "number": 8,
+    "airdate": "2025-08-20",
+    "startTime": "",
+    "startDay": ""
+  }
+]

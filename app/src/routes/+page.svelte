@@ -1,46 +1,17 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import * as echarts from 'echarts';
+	import episodes from '../../../episodes.json';
+	import { getDayString } from '$lib/dayLabels';
+	import convertDataToChartFormat from '$lib/convertDataToChartFormat';
 
+	console.log(episodes.filter((e) => e.startTime && e.startDay));
+
+	const realData = convertDataToChartFormat(episodes);
+
+	console.log(realData);
 	let chartContainer;
 	let chart;
-	const dayLabels = {
-		1: 'Sunday',
-		2: 'Monday',
-		3: 'Tuesday',
-		4: 'Wednesday',
-		5: 'Thursday',
-		6: 'Friday',
-		7: 'Saturday'
-	};
-	// Sample data for the scatter chart
-	const scatterData = [
-		[1, 8],
-		[1, 8],
-		[1, 8],
-		[1, 8],
-		[2, 14],
-		[3, 9],
-		[1, 22],
-		[4, 16],
-		[5, 7],
-		[6, 19],
-		[7, 11],
-		[2, 23],
-		[3, 6],
-		[4, 13],
-		[5, 17],
-		[6, 4],
-		[7, 20],
-		[1, 15],
-		[2, 2],
-		[3, 18],
-		[4, 10],
-		[5, 21],
-		[6, 12],
-		[7, 5],
-		[1, 1]
-	];
 
 	onMount(() => {
 		// Initialize the chart
@@ -98,10 +69,10 @@
 			return processedData;
 		}
 
-		const processedData = processOverlappingData(scatterData);
+		const processedData = processOverlappingData(realData);
 		const option = {
 			title: {
-				text: 'Scatter Chart Example',
+				text: 'Always Sunny Start Time',
 				left: 'center'
 			},
 			tooltip: {
@@ -122,7 +93,7 @@
 				},
 				axisLabel: {
 					formatter: function (value) {
-						return dayLabels[value] || null;
+						return getDayString(value) || null;
 					}
 				}
 			},
@@ -133,7 +104,7 @@
 				nameGap: 15,
 				min: 0,
 				max: 24,
-				interval: 2,
+				interval: 1,
 				splitLine: {
 					lineStyle: {
 						type: 'dashed'
