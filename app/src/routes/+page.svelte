@@ -4,6 +4,7 @@
 	import episodes from '../../../episodes.json';
 	import { getDayString } from '$lib/dayLabels';
 	import convertDataToChartFormat from '$lib/convertDataToChartFormat';
+	import capitalizeFirstLetter from '$lib/capitalizeFirstLetter';
 
 	console.log(episodes.filter((e) => e.startTime && e.startDay));
 
@@ -14,11 +15,11 @@
 	let chart;
 
 	onMount(() => {
-		// Initialize the chart
 		chart = echarts.init(chartContainer);
 		// Function to spread overlapping points deterministically
 		function processOverlappingData(data) {
 			const pointGroups = {};
+			const processedData = [];
 
 			// Group points by their coordinates
 			data.forEach((point, index) => {
@@ -27,12 +28,9 @@
 				if (!pointGroups[key]) {
 					pointGroups[key] = [];
 				}
-				pointGroups[key].push({ point, originalIndex: index });
+				pointGroups[key].push({ point, episodeIndex: index });
 			});
 
-			const processedData = [];
-
-			// Process each group
 			Object.entries(pointGroups).forEach(([key, group]) => {
 				const [originalX, originalY] = group[0].point;
 				const count = group.length;
@@ -42,13 +40,11 @@
 					processedData.push({
 						value: [originalX, originalY],
 						symbolSize: 8,
-						count: 1,
-						originalX: originalX,
-						originalY: originalY
+						episodeIndex: group[0].episodeIndex
 					});
 				} else {
 					// Multiple points, spread them out evenly
-					const spacing = 0.1; // Adjust this to control spacing
+					const spacing = 0.1;
 					const totalWidth = (count - 1) * spacing;
 					const startOffset = -totalWidth / 2;
 
@@ -57,10 +53,7 @@
 						processedData.push({
 							value: [originalX + xOffset, originalY],
 							symbolSize: 8,
-							count: count,
-							originalX: originalX,
-							originalY: originalY,
-							episodeIndex: item.originalIndex // Keep track of which episode this is
+							episodeIndex: item.episodeIndex
 						});
 					});
 				}
@@ -71,21 +64,41 @@
 
 		const processedData = processOverlappingData(realData);
 		const option = {
-			title: {
-				text: 'Always Sunny Start Time',
-				left: 'center'
-			},
 			tooltip: {
 				trigger: 'item',
-				formatter: 'X: {c0}<br/>Y: {c1}'
+				formatter: function (params) {
+					console.log(params.data);
+					const data = params.data;
+					const episodeData = episodes[data.episodeIndex]; // Access original episode data
+
+					return `
+            <div style="padding: 10px;">
+                <div style="color: #000000; font-weight: bold; margin-bottom: 4px;">
+                    ${episodeData?.name || 'Episode'}
+                </div>
+                <div style="margin-bottom: 4px;">
+                Season: ${episodeData?.season || 'N/A'} -
+				Episode: ${episodeData?.number || 'N/A'}
+                </div>
+                <div style="margin-bottom: 4px;">
+                   
+                </div>
+			   <p>${episodeData.startTime.toLowerCase()} on a ${capitalizeFirstLetter(episodeData.startDay)}</p>
+            </div>
+        `;
+				}
 			},
 			xAxis: {
 				type: 'value',
 				nameLocation: 'middle',
 				nameGap: 30,
+				min: 0,
+				max: 8,
+				interval: 1,
 				splitLine: {
 					lineStyle: {
-						type: 'dashed'
+						type: 'dashed',
+						color: '#333333'
 					}
 				},
 				axisLine: {
@@ -104,10 +117,11 @@
 				nameGap: 15,
 				min: 0,
 				max: 24,
-				interval: 1,
+				interval: 2,
 				splitLine: {
 					lineStyle: {
-						type: 'dashed'
+						type: 'dashed',
+						color: '#333333'
 					}
 				},
 				axisLine: {
@@ -116,6 +130,7 @@
 				axisLabel: {
 					formatter: function (value) {
 						// Convert 24-hour to 12-hour format
+
 						if (value === 0) return '12:00 AM';
 						if (value === 12) return '12:00 PM';
 						if (value < 12) return `${value}:00 AM`;
@@ -130,12 +145,11 @@
 					data: processedData,
 					symbolSize: 8,
 					itemStyle: {
-						color: '#3b82f6',
+						color: '#FED82B',
 						opacity: 0.8
 					},
 					emphasis: {
 						itemStyle: {
-							color: '#1d4ed8',
 							opacity: 1,
 							borderColor: '#fff',
 							borderWidth: 2
@@ -176,7 +190,12 @@
 	});
 </script>
 
-<div class="chart-wrapper">
+<div class="chart-wrapper min-h-screen bg-black text-center">
+	<p class="mt-12 text-4xl text-white">IASIP Time Chart</p>
+	<div>
+		<p>Season 01</p>
+	</div>
+	<p>data</p>
 	<div bind:this={chartContainer} class="chart-container"></div>
 </div>
 
@@ -189,7 +208,5 @@
 	.chart-container {
 		width: 100%;
 		height: 800px;
-		border: 1px solid #e5e7eb;
-		border-radius: 8px;
 	}
 </style>
