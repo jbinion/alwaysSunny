@@ -7,7 +7,7 @@ const convertTimeToDecimal = (input: string): number => {
 
 	const minutes = parseInt(time.split(':')[1], 10);
 
-	if (amPm === 'pm' && hours < 12) {
+	if (amPm.toLowerCase() === 'pm' && hours < 12) {
 		hours += 12;
 	}
 	const formattedMinutes = Number((minutes / 60).toFixed(2));
