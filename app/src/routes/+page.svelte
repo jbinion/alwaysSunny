@@ -1,99 +1,61 @@
-<script>
+<script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import * as echarts from 'echarts';
 	import episodes from '../../../episodes.json';
 	import { getDayString } from '$lib/dayLabels';
-	import convertDataToChartFormat from '$lib/convertDataToChartFormat';
+	import { processOverlappingData, type Result } from '$lib/convertDataToChartFormat';
+	import Tooltip from '$lib/Tooltip';
+	import type { CallbackDataParams } from 'echarts/types/dist/shared';
 
-	console.log(episodes.filter((e) => e.startTime && e.startDay));
-
-	const realData = convertDataToChartFormat(episodes);
-
-	console.log(realData);
-	let chartContainer;
-	let chart;
+	let chartContainer: HTMLDivElement;
+	let chart: echarts.ECharts;
+	let selectedSeason: number | null = null;
+	const seasons = Array.from(new Set(episodes.map((e) => e.season)));
+	const resizeHandler = () => {
+		chart.resize();
+	};
 
 	onMount(() => {
-		// Initialize the chart
 		chart = echarts.init(chartContainer);
-		// Function to spread overlapping points deterministically
-		function processOverlappingData(data) {
-			const pointGroups = {};
 
-			// Group points by their coordinates
-			data.forEach((point, index) => {
-				const [x, y] = point;
-				const key = `${x},${y}`;
-				if (!pointGroups[key]) {
-					pointGroups[key] = [];
-				}
-				pointGroups[key].push({ point, originalIndex: index });
-			});
-
-			const processedData = [];
-
-			// Process each group
-			Object.entries(pointGroups).forEach(([key, group]) => {
-				const [originalX, originalY] = group[0].point;
-				const count = group.length;
-
-				if (count === 1) {
-					// Single point, no adjustment needed
-					processedData.push({
-						value: [originalX, originalY],
-						symbolSize: 8,
-						count: 1,
-						originalX: originalX,
-						originalY: originalY
-					});
-				} else {
-					// Multiple points, spread them out evenly
-					const spacing = 0.1; // Adjust this to control spacing
-					const totalWidth = (count - 1) * spacing;
-					const startOffset = -totalWidth / 2;
-
-					group.forEach((item, i) => {
-						const xOffset = startOffset + i * spacing;
-						processedData.push({
-							value: [originalX + xOffset, originalY],
-							symbolSize: 8,
-							count: count,
-							originalX: originalX,
-							originalY: originalY,
-							episodeIndex: item.originalIndex // Keep track of which episode this is
-						});
-					});
-				}
-			});
-
-			return processedData;
-		}
-
-		const processedData = processOverlappingData(realData);
+		const processedData = processOverlappingData(selectedSeason);
 		const option = {
-			title: {
-				text: 'Always Sunny Start Time',
-				left: 'center'
-			},
 			tooltip: {
 				trigger: 'item',
-				formatter: 'X: {c0}<br/>Y: {c1}'
+				formatter: function (params: CallbackDataParams) {
+					console.log(params.data);
+					const data = params.data as Result;
+					const episodeData = episodes.find((x) => x.id === data.id);
+					if (!episodeData) return '';
+					return Tooltip(episodeData);
+				}
 			},
 			xAxis: {
 				type: 'value',
 				nameLocation: 'middle',
 				nameGap: 30,
+				min: 0,
+				max: 8,
+				interval: 1,
 				splitLine: {
 					lineStyle: {
-						type: 'dashed'
+						type: 'dashed',
+						color: '#333333'
 					}
 				},
 				axisLine: {
 					show: false
 				},
 				axisLabel: {
-					formatter: function (value) {
-						return getDayString(value) || null;
+					formatter: function (value: number) {
+						const isSmall = window.innerWidth < 768;
+
+						if (isSmall) {
+							const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
+							return shortDays[value] || null;
+						} else {
+							return getDayString(value) || null;
+						}
 					}
 				}
 			},
@@ -104,18 +66,18 @@
 				nameGap: 15,
 				min: 0,
 				max: 24,
-				interval: 1,
+				interval: 2,
 				splitLine: {
 					lineStyle: {
-						type: 'dashed'
+						type: 'dashed',
+						color: '#333333'
 					}
 				},
 				axisLine: {
 					show: false
 				},
 				axisLabel: {
-					formatter: function (value) {
-						// Convert 24-hour to 12-hour format
+					formatter: function (value: number) {
 						if (value === 0) return '12:00 AM';
 						if (value === 12) return '12:00 PM';
 						if (value < 12) return `${value}:00 AM`;
@@ -129,13 +91,9 @@
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-					itemStyle: {
-						color: '#3b82f6',
-						opacity: 0.8
-					},
+
 					emphasis: {
 						itemStyle: {
-							color: '#1d4ed8',
 							opacity: 1,
 							borderColor: '#fff',
 							borderWidth: 2
@@ -150,33 +108,45 @@
 			}
 		};
 
-		// Set the option and render the chart
-		chart.setOption(option);
+		chart.setOption(option, true);
 
-		// Handle window resize
-		const handleResize = () => {
-			chart.resize();
-		};
-
-		window.addEventListener('resize', handleResize);
-
-		// Store the resize handler for cleanup
-		chart._resizeHandler = handleResize;
+		window.addEventListener('resize', resizeHandler);
 	});
 
 	onDestroy(() => {
 		if (chart) {
-			// Remove resize listener
-			if (chart._resizeHandler) {
-				window.removeEventListener('resize', chart._resizeHandler);
+			if (resizeHandler) {
+				window.removeEventListener('resize', resizeHandler);
 			}
-			// Dispose of the chart
 			chart.dispose();
 		}
 	});
+	const onSeasonSelect = (seasonNumber: number) => {
+		console.log(seasonNumber);
+		selectedSeason === seasonNumber ? (selectedSeason = null) : (selectedSeason = seasonNumber);
+		const processedData = processOverlappingData(selectedSeason);
+		chart.setOption({
+			series: [{ data: processedData }]
+		});
+	};
 </script>
 
-<div class="chart-wrapper">
+<div class="chart-wrapper container mx-auto min-h-screen space-y-12 bg-black text-center">
+	<p class="mt-12 text-4xl text-white">IASIP Time Chart</p>
+	<div>
+		<a href="/data">Episode list</a>
+	</div>
+
+	<div class=" flex flex-row flex-wrap gap-4">
+		{#each seasons as season}
+			<button
+				class={`cursor-pointer rounded border border-white/10 px-4 py-0.5 ${season === selectedSeason && 'bg-white/10'}`}
+				on:click={() => onSeasonSelect(season)}
+			>
+				<p class="text-white">Season {season}</p>
+			</button>
+		{/each}
+	</div>
 	<div bind:this={chartContainer} class="chart-container"></div>
 </div>
 
@@ -189,7 +159,5 @@
 	.chart-container {
 		width: 100%;
 		height: 800px;
-		border: 1px solid #e5e7eb;
-		border-radius: 8px;
 	}
 </style>
