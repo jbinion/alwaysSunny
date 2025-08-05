@@ -10,57 +10,67 @@
 
 	const realData = convertDataToChartFormat(episodes);
 
-	console.log(realData);
 	let chartContainer;
 	let chart;
+	let season = 2;
+	function processOverlappingData(data) {
+		const pointGroups = {};
+		const processedData = [];
 
+		// Group points by their coordinates
+		data.forEach((point, index) => {
+			const [x, y] = point;
+			const key = `${x},${y}`;
+			if (!pointGroups[key]) {
+				pointGroups[key] = [];
+			}
+			pointGroups[key].push({ point, episodeIndex: index, season: 3 });
+		});
+
+		Object.entries(pointGroups).forEach(([key, group]) => {
+			const [originalX, originalY] = group[0].point;
+			const count = group.length;
+
+			if (count === 1) {
+				// Single point, no adjustment needed
+				processedData.push({
+					value: [originalX, originalY],
+					symbolSize: 8,
+					episodeIndex: group[0].episodeIndex,
+					itemStyle: {
+						// Add itemStyle directly to data
+						color: group[0].season === season ? '#FED82B' : '#cccccc',
+						opacity: 0.8
+					}
+				});
+			} else {
+				// Multiple points, spread them out evenly
+				const spacing = 0.1;
+				const totalWidth = (count - 1) * spacing;
+				const startOffset = -totalWidth / 2;
+
+				group.forEach((item, i) => {
+					console.log(item);
+					const xOffset = startOffset + i * spacing;
+					processedData.push({
+						value: [originalX + xOffset, originalY],
+						symbolSize: 8,
+						episodeIndex: item.episodeIndex,
+						itemStyle: {
+							// Add itemStyle directly to data
+							color: item.season === season ? '#FED82B' : '#cccccc',
+							opacity: 0.8
+						}
+					});
+				});
+			}
+		});
+		console.log(processedData);
+		return processedData;
+	}
 	onMount(() => {
 		chart = echarts.init(chartContainer);
 		// Function to spread overlapping points deterministically
-		function processOverlappingData(data) {
-			const pointGroups = {};
-			const processedData = [];
-
-			// Group points by their coordinates
-			data.forEach((point, index) => {
-				const [x, y] = point;
-				const key = `${x},${y}`;
-				if (!pointGroups[key]) {
-					pointGroups[key] = [];
-				}
-				pointGroups[key].push({ point, episodeIndex: index });
-			});
-
-			Object.entries(pointGroups).forEach(([key, group]) => {
-				const [originalX, originalY] = group[0].point;
-				const count = group.length;
-
-				if (count === 1) {
-					// Single point, no adjustment needed
-					processedData.push({
-						value: [originalX, originalY],
-						symbolSize: 8,
-						episodeIndex: group[0].episodeIndex
-					});
-				} else {
-					// Multiple points, spread them out evenly
-					const spacing = 0.1;
-					const totalWidth = (count - 1) * spacing;
-					const startOffset = -totalWidth / 2;
-
-					group.forEach((item, i) => {
-						const xOffset = startOffset + i * spacing;
-						processedData.push({
-							value: [originalX + xOffset, originalY],
-							symbolSize: 8,
-							episodeIndex: item.episodeIndex
-						});
-					});
-				}
-			});
-
-			return processedData;
-		}
 
 		const processedData = processOverlappingData(realData);
 		const option = {
@@ -154,10 +164,19 @@
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-					itemStyle: {
-						color: '#FED82B',
-						opacity: 0.8
-					},
+					// itemStyle: {
+					// 	color: '#FED82B',
+					// 	opacity: 0.8
+					// },
+					// itemStyle: function (params) {
+					// 	console.log('Season from data:', params.data.season); // Should now work
+					// 	const isSelectedSeason = params.data.season === season;
+
+					// 	return {
+					// 		color: isSelectedSeason ? '#FED82B' : '#cccccc',
+					// 		opacity: isSelectedSeason ? 0.8 : 0.3
+					// 	};
+					// },
 					emphasis: {
 						itemStyle: {
 							opacity: 1,
@@ -175,7 +194,7 @@
 		};
 
 		// Set the option and render the chart
-		chart.setOption(option);
+		chart.setOption(option, true);
 
 		// Handle window resize
 		const handleResize = () => {
@@ -198,12 +217,29 @@
 			chart.dispose();
 		}
 	});
+	const onSeasonSelect = (seasonNumber) => {
+		console.log(seasonNumber);
+		season = seasonNumber;
+		const processedData = processOverlappingData(realData);
+		chart.setOption({
+			series: [{ data: processedData }]
+		});
+	};
+	const seasons = Array.from(new Set(episodes.map((e) => e.season)));
+	console.log(seasons);
 </script>
 
-<div class="chart-wrapper min-h-screen bg-black text-center">
+<div class="chart-wrapper min-h-screen space-y-12 bg-black text-center">
 	<p class="mt-12 text-4xl text-white">IASIP Time Chart</p>
-	<div>
-		<p>Season 01</p>
+	<div class="container mx-auto flex flex-row flex-wrap gap-4">
+		{#each seasons as season}
+			<button
+				class="cursor-pointer rounded border border-white/10 px-4 py-0.5"
+				on:click={() => onSeasonSelect(season)}
+			>
+				<p class="text-white">Season {season}</p>
+			</button>
+		{/each}
 	</div>
 	<p>data</p>
 	<div bind:this={chartContainer} class="chart-container"></div>
