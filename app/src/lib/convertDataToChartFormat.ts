@@ -1,7 +1,7 @@
 import convertTimeToDecimal from './convertTimeToDecimal';
 import { getDayNumber } from './dayLabels';
 
-const convertDataToChartFormat = (data) => {
+const convertDataToChartFormat = (data): [number, number][] => {
 	return data
 		.filter((e) => e.startTime && e.startDay)
 		.map((e) => {
