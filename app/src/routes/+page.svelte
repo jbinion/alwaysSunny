@@ -3,95 +3,31 @@
 	import * as echarts from 'echarts';
 	import episodes from '../../../episodes.json';
 	import { getDayString } from '$lib/dayLabels';
-	import convertDataToChartFormat from '$lib/convertDataToChartFormat';
-	import capitalizeFirstLetter from '$lib/capitalizeFirstLetter';
-	import type { FormattedEpisode } from '$lib/convertDataToChartFormat';
+	import { processOverlappingData, type Result } from '$lib/convertDataToChartFormat';
+	import Tooltip from '$lib/Tooltip';
+	import type { CallbackDataParams } from 'echarts/types/dist/shared';
 
-	console.log(episodes.filter((e) => e.startTime && e.startDay));
-
-	const realData = convertDataToChartFormat(episodes);
-
-	let chartContainer;
-	let chart;
+	let chartContainer: HTMLDivElement;
+	let chart: echarts.ECharts;
 	let selectedSeason: number | null = null;
+	const seasons = Array.from(new Set(episodes.map((e) => e.season)));
+	const resizeHandler = () => {
+		chart.resize();
+	};
 
-	function processOverlappingData(data: FormattedEpisode[]) {
-		const processedData = [];
-
-		const newPointGroups = data.reduce((acc, cur) => {
-			const [x, y] = cur.value;
-			const key = `${x},${y}`;
-			if (!acc[key]) {
-				acc[key] = [];
-			}
-			acc[key].push(cur);
-			return acc;
-		}, {});
-
-		Object.entries(newPointGroups).forEach(([key, group]) => {
-			const [originalX, originalY] = group[0].value;
-			const count = group.length;
-
-			if (count === 1) {
-				processedData.push({
-					value: [originalX, originalY],
-					id: group[0].id,
-					symbolSize: selectedSeason === null ? 6 : group[0].season === selectedSeason ? 8 : 4,
-					itemStyle: {
-						color: '#FED82B',
-						opacity: selectedSeason === null ? 0.8 : group[0].season === selectedSeason ? 0.8 : 0.4
-					}
-				});
-			} else {
-				const spacing = 0.1;
-				const totalWidth = (count - 1) * spacing;
-				const startOffset = -totalWidth / 2;
-
-				group.forEach((item, i) => {
-					console.log(item);
-					const xOffset = startOffset + i * spacing;
-					processedData.push({
-						value: [originalX + xOffset, originalY],
-						id: item.id,
-						symbolSize: selectedSeason === null ? 6 : item.season === selectedSeason ? 8 : 4,
-						itemStyle: {
-							color: '#FED82B',
-							opacity: selectedSeason === null ? 0.8 : item.season === selectedSeason ? 0.8 : 0.4
-						}
-					});
-				});
-			}
-		});
-		return processedData;
-	}
 	onMount(() => {
 		chart = echarts.init(chartContainer);
-		// Function to spread overlapping points deterministically
 
-		const processedData = processOverlappingData(realData);
+		const processedData = processOverlappingData(selectedSeason);
 		const option = {
 			tooltip: {
 				trigger: 'item',
-				formatter: function (params) {
+				formatter: function (params: CallbackDataParams) {
 					console.log(params.data);
-					const data = params.data;
+					const data = params.data as Result;
 					const episodeData = episodes.find((x) => x.id === data.id); // Access original episode data
-
-					return `
-            <div style="padding: 10px;">
-                <div style="color: #000000; font-weight: bold; margin-bottom: 4px;">
-                    ${episodeData?.name || 'Episode'}
-                </div>
-                <div style="margin-bottom: 4px;">
-                Season: ${episodeData?.season || 'N/A'} -
-				Episode: ${episodeData?.number || 'N/A'}
-                </div>
-                <div style="margin-bottom: 4px;">
-                   
-                </div>
-			   <p>${episodeData?.startTime.toLowerCase()} on a ${capitalizeFirstLetter(episodeData?.startDay || '')}</p>
-            </div>
-        `;
+					if (!episodeData) return '';
+					return Tooltip(episodeData);
 				}
 			},
 			xAxis: {
@@ -111,16 +47,13 @@
 					show: false
 				},
 				axisLabel: {
-					formatter: function (value) {
-						// Check screen size and return appropriate label
+					formatter: function (value: number) {
 						const isSmall = window.innerWidth < 768;
 
 						if (isSmall) {
-							// Single letter labels for small screens
 							const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
 							return shortDays[value] || null;
 						} else {
-							// Use your existing getDayString function for larger screens
 							return getDayString(value) || null;
 						}
 					}
@@ -144,9 +77,7 @@
 					show: false
 				},
 				axisLabel: {
-					formatter: function (value) {
-						// Convert 24-hour to 12-hour format
-
+					formatter: function (value: number) {
 						if (value === 0) return '12:00 AM';
 						if (value === 12) return '12:00 PM';
 						if (value < 12) return `${value}:00 AM`;
@@ -160,19 +91,7 @@
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-					// itemStyle: {
-					// 	color: '#FED82B',
-					// 	opacity: 0.8
-					// },
-					// itemStyle: function (params) {
-					// 	console.log('Season from data:', params.data.season); // Should now work
-					// 	const isSelectedSeason = params.data.season === season;
 
-					// 	return {
-					// 		color: isSelectedSeason ? '#FED82B' : '#cccccc',
-					// 		opacity: isSelectedSeason ? 0.8 : 0.3
-					// 	};
-					// },
 					emphasis: {
 						itemStyle: {
 							opacity: 1,
@@ -189,40 +108,27 @@
 			}
 		};
 
-		// Set the option and render the chart
 		chart.setOption(option, true);
 
-		// Handle window resize
-		const handleResize = () => {
-			chart.resize();
-		};
-
-		window.addEventListener('resize', handleResize);
-
-		// Store the resize handler for cleanup
-		chart._resizeHandler = handleResize;
+		window.addEventListener('resize', resizeHandler);
 	});
 
 	onDestroy(() => {
 		if (chart) {
-			// Remove resize listener
-			if (chart._resizeHandler) {
-				window.removeEventListener('resize', chart._resizeHandler);
+			if (resizeHandler) {
+				window.removeEventListener('resize', resizeHandler);
 			}
-			// Dispose of the chart
 			chart.dispose();
 		}
 	});
-	const onSeasonSelect = (seasonNumber) => {
+	const onSeasonSelect = (seasonNumber: number) => {
 		console.log(seasonNumber);
 		selectedSeason === seasonNumber ? (selectedSeason = null) : (selectedSeason = seasonNumber);
-		const processedData = processOverlappingData(realData);
+		const processedData = processOverlappingData(selectedSeason);
 		chart.setOption({
 			series: [{ data: processedData }]
 		});
 	};
-	const seasons = Array.from(new Set(episodes.map((e) => e.season)));
-	console.log(seasons);
 </script>
 
 <div class="chart-wrapper container mx-auto min-h-screen space-y-12 bg-black text-center">
