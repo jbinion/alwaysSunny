@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import * as echarts from 'echarts';
 	import episodes from '../../../episodes.json';
 	import { getDayString } from '$lib/dayLabels';
 	import convertDataToChartFormat from '$lib/convertDataToChartFormat';
 	import capitalizeFirstLetter from '$lib/capitalizeFirstLetter';
+	import type { FormattedEpisode } from '$lib/convertDataToChartFormat';
 
 	console.log(episodes.filter((e) => e.startTime && e.startDay));
 
@@ -12,39 +13,36 @@
 
 	let chartContainer;
 	let chart;
-	let season = 2;
-	function processOverlappingData(data) {
-		const pointGroups = {};
+	let selectedSeason: number | null = null;
+
+	function processOverlappingData(data: FormattedEpisode[]) {
 		const processedData = [];
 
-		// Group points by their coordinates
-		data.forEach((point, index) => {
-			const [x, y] = point;
+		const newPointGroups = data.reduce((acc, cur) => {
+			const [x, y] = cur.value;
 			const key = `${x},${y}`;
-			if (!pointGroups[key]) {
-				pointGroups[key] = [];
+			if (!acc[key]) {
+				acc[key] = [];
 			}
-			pointGroups[key].push({ point, episodeIndex: index, season: 3 });
-		});
+			acc[key].push(cur);
+			return acc;
+		}, {});
 
-		Object.entries(pointGroups).forEach(([key, group]) => {
-			const [originalX, originalY] = group[0].point;
+		Object.entries(newPointGroups).forEach(([key, group]) => {
+			const [originalX, originalY] = group[0].value;
 			const count = group.length;
 
 			if (count === 1) {
-				// Single point, no adjustment needed
 				processedData.push({
 					value: [originalX, originalY],
-					symbolSize: 8,
-					episodeIndex: group[0].episodeIndex,
+					id: group[0].id,
+					symbolSize: selectedSeason === null ? 6 : group[0].season === selectedSeason ? 8 : 4,
 					itemStyle: {
-						// Add itemStyle directly to data
-						color: group[0].season === season ? '#FED82B' : '#cccccc',
-						opacity: 0.8
+						color: '#FED82B',
+						opacity: selectedSeason === null ? 0.8 : group[0].season === selectedSeason ? 0.8 : 0.4
 					}
 				});
 			} else {
-				// Multiple points, spread them out evenly
 				const spacing = 0.1;
 				const totalWidth = (count - 1) * spacing;
 				const startOffset = -totalWidth / 2;
@@ -54,18 +52,16 @@
 					const xOffset = startOffset + i * spacing;
 					processedData.push({
 						value: [originalX + xOffset, originalY],
-						symbolSize: 8,
-						episodeIndex: item.episodeIndex,
+						id: item.id,
+						symbolSize: selectedSeason === null ? 6 : item.season === selectedSeason ? 8 : 4,
 						itemStyle: {
-							// Add itemStyle directly to data
-							color: item.season === season ? '#FED82B' : '#cccccc',
-							opacity: 0.8
+							color: '#FED82B',
+							opacity: selectedSeason === null ? 0.8 : item.season === selectedSeason ? 0.8 : 0.4
 						}
 					});
 				});
 			}
 		});
-		console.log(processedData);
 		return processedData;
 	}
 	onMount(() => {
@@ -79,7 +75,7 @@
 				formatter: function (params) {
 					console.log(params.data);
 					const data = params.data;
-					const episodeData = episodes[data.episodeIndex]; // Access original episode data
+					const episodeData = episodes.find((x) => x.id === data.id); // Access original episode data
 
 					return `
             <div style="padding: 10px;">
@@ -93,7 +89,7 @@
                 <div style="margin-bottom: 4px;">
                    
                 </div>
-			   <p>${episodeData.startTime.toLowerCase()} on a ${capitalizeFirstLetter(episodeData.startDay)}</p>
+			   <p>${episodeData?.startTime.toLowerCase()} on a ${capitalizeFirstLetter(episodeData?.startDay || '')}</p>
             </div>
         `;
 				}
@@ -219,7 +215,7 @@
 	});
 	const onSeasonSelect = (seasonNumber) => {
 		console.log(seasonNumber);
-		season = seasonNumber;
+		selectedSeason === seasonNumber ? (selectedSeason = null) : (selectedSeason = seasonNumber);
 		const processedData = processOverlappingData(realData);
 		chart.setOption({
 			series: [{ data: processedData }]
@@ -238,7 +234,7 @@
 	<div class=" flex flex-row flex-wrap gap-4">
 		{#each seasons as season}
 			<button
-				class="cursor-pointer rounded border border-white/10 px-4 py-0.5"
+				class={`cursor-pointer rounded border border-white/10 px-4 py-0.5 ${season === selectedSeason && 'bg-white/10'}`}
 				on:click={() => onSeasonSelect(season)}
 			>
 				<p class="text-white">Season {season}</p>
