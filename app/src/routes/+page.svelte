@@ -229,9 +229,13 @@
 	console.log(seasons);
 </script>
 
-<div class="chart-wrapper min-h-screen space-y-12 bg-black text-center">
+<div class="chart-wrapper container mx-auto min-h-screen space-y-12 bg-black text-center">
 	<p class="mt-12 text-4xl text-white">IASIP Time Chart</p>
-	<div class="container mx-auto flex flex-row flex-wrap gap-4">
+	<div>
+		<a href="/data">Episode list</a>
+	</div>
+
+	<div class=" flex flex-row flex-wrap gap-4">
 		{#each seasons as season}
 			<button
 				class="cursor-pointer rounded border border-white/10 px-4 py-0.5"
@@ -241,7 +245,6 @@
 			</button>
 		{/each}
 	</div>
-	<p>data</p>
 	<div bind:this={chartContainer} class="chart-container"></div>
 </div>
 
