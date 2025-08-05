@@ -106,7 +106,17 @@
 				},
 				axisLabel: {
 					formatter: function (value) {
-						return getDayString(value) || null;
+						// Check screen size and return appropriate label
+						const isSmall = window.innerWidth < 768;
+
+						if (isSmall) {
+							// Single letter labels for small screens
+							const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
+							return shortDays[value] || null;
+						} else {
+							// Use your existing getDayString function for larger screens
+							return getDayString(value) || null;
+						}
 					}
 				}
 			},
