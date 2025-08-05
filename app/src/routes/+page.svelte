@@ -25,7 +25,7 @@
 				formatter: function (params: CallbackDataParams) {
 					console.log(params.data);
 					const data = params.data as Result;
-					const episodeData = episodes.find((x) => x.id === data.id); // Access original episode data
+					const episodeData = episodes.find((x) => x.id === data.id);
 					if (!episodeData) return '';
 					return Tooltip(episodeData);
 				}
