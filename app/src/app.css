@@ -1,1 +1,19 @@
 @import 'tailwindcss';
+
+body {
+	@apply bg-black text-white;
+}
+
+a {
+	@apply text-zinc-300 transition-colors hover:text-white;
+}
+a.active {
+	@apply !text-white;
+}
+
+.seasonButton {
+	@apply cursor-pointer rounded border border-white/10 px-4 py-0.5 text-zinc-300 transition-colors hover:!bg-zinc-900/80 hover:text-white;
+}
+.seasonButton.active {
+	@apply bg-zinc-900/80 text-white;
+}
