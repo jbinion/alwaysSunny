@@ -104,8 +104,7 @@
 			grid: {
 				left: '10%',
 				right: '10%',
-				bottom: '15%',
-				top: '0%'
+				bottom: '15%'
 			}
 		};
 
@@ -132,23 +131,23 @@
 	};
 </script>
 
-<div class="space-y-12">
-	<p class="text-center text-4xl">IASIP Time Chart</p>
+<div class="chart-wrapper container mx-auto min-h-screen space-y-12 bg-black text-center">
+	<p class="mt-12 text-4xl text-white">IASIP Time Chart</p>
+	<div>
+		<a href="/data">Episode list</a>
+	</div>
 
-	<div class="flex flex-row flex-wrap justify-center gap-4">
+	<div class=" flex flex-row flex-wrap gap-4">
 		{#each seasons as season}
 			<button
-				class="seasonButton"
-				class:active={season === selectedSeason}
+				class={`cursor-pointer rounded border border-white/10 px-4 py-0.5 ${season === selectedSeason && 'bg-white/10'}`}
 				on:click={() => onSeasonSelect(season)}
 			>
-				Season {season}
+				<p class="text-white">Season {season}</p>
 			</button>
 		{/each}
 	</div>
-	<div class="chart-wrapper">
-		<div bind:this={chartContainer} class="chart-container"></div>
-	</div>
+	<div bind:this={chartContainer} class="chart-container"></div>
 </div>
 
 <style>
