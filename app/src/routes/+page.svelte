@@ -124,7 +124,8 @@
 	});
 	const onSeasonSelect = (seasonNumber: number) => {
 		console.log(seasonNumber);
-		selectedSeason === seasonNumber ? (selectedSeason = null) : (selectedSeason = seasonNumber);
+		if (selectedSeason == seasonNumber) selectedSeason = null;
+		else selectedSeason = seasonNumber;
 		const processedData = processOverlappingData(selectedSeason);
 		chart.setOption({
 			series: [{ data: processedData }]
@@ -136,7 +137,7 @@
 	<p class="text-center text-4xl">IASIP Time Chart</p>
 
 	<div class="flex flex-row flex-wrap justify-center gap-4">
-		{#each seasons as season}
+		{#each seasons as season (`button${season}`)}
 			<button
 				class="seasonButton"
 				class:active={season === selectedSeason}

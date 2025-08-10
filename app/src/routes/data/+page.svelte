@@ -5,7 +5,7 @@
 
 <div class="flex flex-col space-y-12 px-12 pb-12">
 	<div class="grid grid-cols-1">
-		{#each episodes as episode, index}
+		{#each episodes as episode, index (episode.name)}
 			<div
 				class="flex flex-row items-center gap-4 border-zinc-300 py-4"
 				class:border-b={index < episodes.length - 1 &&

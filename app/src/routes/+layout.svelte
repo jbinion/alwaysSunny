@@ -19,7 +19,7 @@
 		</div>
 
 		<a href="https://www.github.com/jbinion/alwaysSunny" target="_blank"
-			><Icon src={AiFillGithub} size={'24px'} /></a
+			><Icon src={AiFillGithub} size="24px" /></a
 		>
 	</div>
 	{@render children?.()}
