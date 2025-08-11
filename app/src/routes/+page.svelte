@@ -134,7 +134,7 @@
 </script>
 
 <div class="space-y-12">
-	<p class="title text-center text-4xl">IASIP Time Chart</p>
+	<p class="title text-center text-4xl">IASIP Start Chart</p>
 
 	<div class="flex flex-row flex-wrap justify-center gap-4">
 		{#each seasons as season (`button${season}`)}

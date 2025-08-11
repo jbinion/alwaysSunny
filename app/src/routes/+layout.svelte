@@ -18,8 +18,10 @@
 			<a href="/data" class:active={$page.url.pathname === '/data'}>All Episodes</a>
 		</div>
 
-		<a href="https://www.github.com/jbinion/alwaysSunny" target="_blank"
-			><Icon src={AiFillGithub} size="24px" /></a
+		<a
+			href="https://www.github.com/jbinion/alwaysSunny"
+			target="_blank"
+			aria-label="View project on github"><Icon src={AiFillGithub} size="24px" /></a
 		>
 	</div>
 	{@render children?.()}
