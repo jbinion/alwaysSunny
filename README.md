@@ -1,6 +1,6 @@
 # Always Sunny Episode Time Tracker
 
-A simple svelte app that visualizes the time and day of the week for each episode of _It's Always Sunny in Philadelphia_.
+A simple svelte app that visualizes the in universe start time and day for each episode of _It's Always Sunny in Philadelphia_.
 
 ### Installation
 
