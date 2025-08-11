@@ -1,17 +1,5 @@
 @import 'tailwindcss';
 
-@font-face {
-	font-family: 'Textile';
-	src: url('/fonts/653f0331330580a51716e5cbb69d8db9.eot');
-	src:
-		url('/fonts/653f0331330580a51716e5cbb69d8db9.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/653f0331330580a51716e5cbb69d8db9.woff2') format('woff2'),
-		url('/fonts/653f0331330580a51716e5cbb69d8db9.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
 body {
 	@apply bg-black text-white;
 	--sb-track-color: #000000;
@@ -54,5 +42,5 @@ a.active {
 }
 
 .title {
-	font-family: Textile;
+	font-family: Textile, Arial, sans-serif;
 }
