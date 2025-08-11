@@ -1,4 +1,4 @@
-# Always Sunny Episode Time Tracker
+# Always Sunny Episode Time Chart
 
 A simple svelte app that visualizes the in universe start time and day for each episode of _It's Always Sunny in Philadelphia_.
 
