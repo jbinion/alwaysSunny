@@ -1,7 +1,42 @@
 @import 'tailwindcss';
 
+@font-face {
+	font-family: 'Textile';
+	src: url('/fonts/653f0331330580a51716e5cbb69d8db9.eot');
+	src:
+		url('/fonts/653f0331330580a51716e5cbb69d8db9.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/653f0331330580a51716e5cbb69d8db9.woff2') format('woff2'),
+		url('/fonts/653f0331330580a51716e5cbb69d8db9.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 body {
 	@apply bg-black text-white;
+	--sb-track-color: #000000;
+	--sb-thumb-color: #d4d4d8;
+	--sb-size: 4px;
+}
+
+body::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 1px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+	body {
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
 }
 
 a {
@@ -16,4 +51,8 @@ a.active {
 }
 .seasonButton.active {
 	@apply bg-zinc-900/80 text-white;
+}
+
+.title {
+	font-family: Textile;
 }
