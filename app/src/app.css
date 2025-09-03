@@ -3,20 +3,23 @@
 :root {
 	--background: #000000;
 	--button-active: #131316;
+	--foreground: #ffffff;
+	--foreground-muted: #d4d4d8;
 }
 
 /* .dark {
 	--background: oklch(0.191 0 0);
 } */
 
-/* Add Tailwind v4 @theme configuration as needed */
 @theme {
 	--color-background: var(--background);
 	--color-button-active: var(--button-active);
+	--color-foreground: var(--foreground);
+	--color-foreground-muted: var(--foreground-muted);
 }
 
 body {
-	@apply bg-background text-white;
+	@apply bg-background text-foreground;
 	--sb-track-color: #000000;
 	--sb-thumb-color: #d4d4d8;
 	--sb-size: 4px;
@@ -43,17 +46,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 a {
-	@apply text-zinc-300 transition-colors hover:text-white;
+	@apply text-xl text-foreground-muted transition-colors hover:text-foreground;
 }
 a.active {
-	@apply !text-white;
+	@apply border-b-2 border-foreground !text-foreground;
 }
 
 .seasonButton {
-	@apply cursor-pointer rounded border border-white/10 px-4 py-0.5 text-sm text-zinc-300 transition-colors hover:!bg-zinc-900/80 hover:text-white;
+	@apply cursor-pointer rounded border border-button-active px-4 py-0.5 text-sm text-foreground-muted transition-colors hover:!bg-zinc-900/80 hover:text-white;
 }
 .seasonButton.active {
-	@apply bg-button-active text-white;
+	@apply bg-button-active text-foreground;
 }
 
 .title {
