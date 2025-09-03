@@ -85,19 +85,19 @@
 					}
 				}
 			},
-		
+
 			series: [
 				{
 					name: 'Data Points',
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-				color:'#c4ccd3',
+					color: '#fcdb00',
 					emphasis: {
 						itemStyle: {
 							opacity: 1,
 							borderColor: '#fff',
-							borderWidth: 2,
+							borderWidth: 2
 						}
 					}
 				}
