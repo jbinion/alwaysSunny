@@ -24,8 +24,8 @@ export type Result = {
 const defaultSize = 6;
 const hiddenSize = 3;
 const highlightedSize = 8;
-const defaultOpacity = 0.8;
-const hiddenOpacity = 0.4;
+const defaultOpacity = 1;
+const hiddenOpacity = 0.6;
 const spacing = 0.1;
 
 export function processOverlappingData(selectedSeason: number | null): Result[] {
