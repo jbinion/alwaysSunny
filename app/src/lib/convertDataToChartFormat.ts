@@ -72,7 +72,7 @@ export function processOverlappingData(selectedSeason: number | null): Result[] 
 
 function getSymbolSize(season: number, selectedSeason: number | null): number {
 	if (selectedSeason === null) return 6;
-	return season === selectedSeason ? 8 : 4;
+	return season === selectedSeason ? 8 : 3;
 }
 
 function getItemStyle(
@@ -81,7 +81,7 @@ function getItemStyle(
 ): { color: string; opacity: number } {
 	const baseOpacity = selectedSeason === null ? 0.8 : season === selectedSeason ? 0.8 : 0.4;
 	return {
-		color: '#FED82B',
+		color: '#fcdb00',
 		opacity: baseOpacity
 	};
 }

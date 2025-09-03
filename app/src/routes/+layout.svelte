@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="mx-auto min-h-screen max-w-screen-lg">
-	<div class="mb-12 flex flex-row justify-between p-4 py-6 text-start">
+	<div class="mb-12 flex flex-row justify-between p-4 py-4 text-start">
 		<div class="space-x-4">
 			<a href="/" class:active={$page.url.pathname === '/'}>Home</a>
 			<a href="/data" class:active={$page.url.pathname === '/data'}>All Episodes</a>

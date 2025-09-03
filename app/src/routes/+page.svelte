@@ -85,18 +85,19 @@
 					}
 				}
 			},
+		
 			series: [
 				{
 					name: 'Data Points',
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-
+				color:'#c4ccd3',
 					emphasis: {
 						itemStyle: {
 							opacity: 1,
 							borderColor: '#fff',
-							borderWidth: 2
+							borderWidth: 2,
 						}
 					}
 				}
@@ -133,7 +134,7 @@
 	};
 </script>
 
-<div class="space-y-12">
+<div class="space-y-12 px-4">
 	<p class="title text-center text-4xl">IASIP Start Chart</p>
 
 	<div class="flex flex-row flex-wrap justify-center gap-4">
