@@ -16,103 +16,105 @@
 	};
 
 	onMount(() => {
-		chart = echarts.init(chartContainer);
+	chart = echarts.init(chartContainer);
 
-		const processedData = processOverlappingData(selectedSeason);
-		const option = {
-			tooltip: {
-				trigger: 'item',
-				formatter: function (params: CallbackDataParams) {
-					console.log(params.data);
-					const data = params.data as Result;
-					const episodeData = episodes.find((x) => x.id === data.id);
-					if (!episodeData) return '';
-					return Tooltip(episodeData);
-				}
-			},
-			xAxis: {
-				type: 'value',
-				nameLocation: 'middle',
-				nameGap: 30,
-				min: 0,
-				max: 8,
-				interval: 1,
-				splitLine: {
-					lineStyle: {
-						type: 'dashed',
-						color: '#333333'
-					}
-				},
-				axisLine: {
-					show: false
-				},
-				axisLabel: {
-					formatter: function (value: number) {
-						const isSmall = window.innerWidth < 768;
+	// 🔹 Read CSS variables
+	const styles = getComputedStyle(document.documentElement);
+	const axisLineColor = styles.getPropertyValue('--foreground-muted').trim();
+	const splitLineColor = styles.getPropertyValue('--foreground-muted').trim();
+	const pointColor = styles.getPropertyValue('--accent-yellow').trim();
 
-						if (isSmall) {
-							const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
-							return shortDays[value] || null;
-						} else {
-							return getDayString(value) || null;
-						}
-					}
-				}
-			},
-			yAxis: {
-				type: 'value',
-				showLine: false,
-				inverse: true,
-				nameGap: 15,
-				min: 0,
-				max: 24,
-				interval: 2,
-				splitLine: {
-					lineStyle: {
-						type: 'dashed',
-						color: '#333333'
-					}
-				},
-				axisLine: {
-					show: false
-				},
-				axisLabel: {
-					formatter: function (value: number) {
-						if (value === 0) return '12:00 AM';
-						if (value === 12) return '12:00 PM';
-						if (value < 12) return `${value}:00 AM`;
-						return `${value - 12}:00 PM`;
-					}
-				}
-			},
-			series: [
-				{
-					name: 'Data Points',
-					type: 'scatter',
-					data: processedData,
-					symbolSize: 8,
-					color: '#fcdb00',
-					emphasis: {
-						itemStyle: {
-							opacity: 1,
-							borderColor: '#fff',
-							borderWidth: 2,
-						}
-					}
-				}
-			],
-			grid: {
-				left: '10%',
-				right: '10%',
-				bottom: '15%',
-				top: '0%'
+	const processedData = processOverlappingData(selectedSeason);
+
+	const option = {
+		tooltip: {
+			trigger: 'item',
+			formatter: function (params: CallbackDataParams) {
+				const data = params.data as Result;
+				const episodeData = episodes.find((x) => x.id === data.id);
+				if (!episodeData) return '';
+				return Tooltip(episodeData);
 			}
-		};
+		},
+		xAxis: {
+			type: 'value',
+			nameLocation: 'middle',
+			nameGap: 30,
+			min: 0,
+			max: 8,
+			interval: 1,
+			splitLine: {
+				lineStyle: {
+					type: 'dashed',
+					color: splitLineColor  // ✅ CSS variable
+				}
+			},
+			axisLine: { show: false },
+			axisLabel: {
+				formatter: (value: number) => {
+					const isSmall = window.innerWidth < 768;
+					if (isSmall) {
+						const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
+						return shortDays[value] || null;
+					} else {
+						return getDayString(value) || null;
+					}
+				}
+			}
+		},
+		yAxis: {
+			type: 'value',
+			showLine: false,
+			inverse: true,
+			nameGap: 15,
+			min: 0,
+			max: 24,
+			interval: 2,
+			splitLine: {
+				lineStyle: {
+					type: 'dashed',
+					color: splitLineColor  // ✅ CSS variable
+				}
+			},
+			axisLine: { show: false },
+			axisLabel: {
+				formatter: (value: number) => {
+					if (value === 0) return '12:00 AM';
+					if (value === 12) return '12:00 PM';
+					if (value < 12) return `${value}:00 AM`;
+					return `${value - 12}:00 PM`;
+				}
+			}
+		},
+		series: [
+			{
+				name: 'Data Points',
+				type: 'scatter',
+				data: processedData,
+				symbolSize: 8,
+				color: pointColor, // ✅ CSS variable
+				emphasis: {
+					itemStyle: {
+						opacity: 1,
+						borderColor: '#fff',
+						borderWidth: 2
+					}
+				}
+			}
+		],
+		grid: {
+			left: '10%',
+			right: '10%',
+			bottom: '15%',
+			top: '0%'
+		}
+	};
 
-		chart.setOption(option, true);
+	chart.setOption(option, true);
 
-		window.addEventListener('resize', resizeHandler);
-	});
+	window.addEventListener('resize', resizeHandler);
+});
+
 
 	onDestroy(() => {
 		if (chart) {

@@ -57,7 +57,7 @@
 	</div>
 
 	<div class="mb-12 flex flex-col items-center">
-		<p class="title mb-6 text-center text-4xl">IASIP Start Chart</p>
+		<p class="title mb-6 text-center text-4xl text-accent-yellow">IASIP Start Chart</p>
 		<div class="space-x-6">
 			<a href="/" class:active={$page.url.pathname === '/'}>Chart</a>
 			<a href="/data" class:active={$page.url.pathname === '/data'}>List</a>
