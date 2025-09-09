@@ -2,7 +2,6 @@ import convertTimeToDecimal from './convertTimeToDecimal';
 import { getDayNumber } from './dayLabels';
 import episodes from '../../../episodes.json';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type Episode = {
 	id: number;
 	season: number;
@@ -18,12 +17,20 @@ export type Result = {
 	value: [number, number];
 	symbolSize: number;
 	itemStyle: {
-		color: string;
 		opacity: number;
 	};
 };
 
+const defaultSize = 6;
+const hiddenSize = 3;
+const highlightedSize = 8;
+const defaultOpacity = 1;
+const hiddenOpacity = 0.6;
+const spacing = 0.1;
+
 export function processOverlappingData(selectedSeason: number | null): Result[] {
+	const results: Result[] = [];
+
 	const groupedByCoordinates = episodes
 		.filter((e) => e.startTime && e.startDay)
 		.reduce(
@@ -36,9 +43,6 @@ export function processOverlappingData(selectedSeason: number | null): Result[] 
 			{} as Record<string, typeof episodes>
 		);
 
-	const results: Result[] = [];
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	Object.entries(groupedByCoordinates).forEach(([_, group]) => {
 		const { startDay, startTime } = group[0];
 		const x = getDayNumber(startDay);
@@ -53,7 +57,6 @@ export function processOverlappingData(selectedSeason: number | null): Result[] 
 				itemStyle: getItemStyle(season, selectedSeason)
 			});
 		} else {
-			const spacing = 0.1;
 			const startOffset = -((group.length - 1) * spacing) / 2;
 
 			group.forEach((ep, i) => {
@@ -71,17 +74,18 @@ export function processOverlappingData(selectedSeason: number | null): Result[] 
 }
 
 function getSymbolSize(season: number, selectedSeason: number | null): number {
-	if (selectedSeason === null) return 6;
-	return season === selectedSeason ? 8 : 3;
+	if (selectedSeason === null) return defaultSize;
+	return season === selectedSeason ? highlightedSize : hiddenSize;
 }
 
-function getItemStyle(
-	season: number,
-	selectedSeason: number | null
-): { color: string; opacity: number } {
-	const baseOpacity = selectedSeason === null ? 0.8 : season === selectedSeason ? 0.8 : 0.4;
+function getItemStyle(season: number, selectedSeason: number | null): { opacity: number } {
+	const baseOpacity =
+		selectedSeason === null
+			? defaultOpacity
+			: season === selectedSeason
+				? defaultOpacity
+				: hiddenOpacity;
 	return {
-		color: '#fcdb00',
 		opacity: baseOpacity
 	};
 }
