@@ -1,5 +1,5 @@
 <script lang="ts">
-	import episodes from '../../../../episodes.json';
+	import episodes from '../../data/episodes.json';
 	import EpisodeCard from '../../components/EpisodeCard.svelte';
 	let sortMode: 'chrono' | 'day' | 'unknown' = 'chrono';
 	const dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
