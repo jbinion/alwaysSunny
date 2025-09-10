@@ -22,7 +22,6 @@
 		<button on:click={() => handleClick('day')}>By Day</button>
 		<button on:click={() => handleClick('unknown')}>Unknown Start Day</button>
 	</div>
-	<p>{sortMode}</p>
 
 	{#if sortMode === 'chrono'}
 		{#each episodes as episode, index (episode.name)}

@@ -20,8 +20,8 @@
 
 		// 🔹 Read CSS variables
 		const styles = getComputedStyle(document.documentElement);
-		const axisLineColor = styles.getPropertyValue('--foreground-muted').trim();
-		const splitLineColor = styles.getPropertyValue('--foreground-muted').trim();
+		// const axisLineColor = styles.getPropertyValue('--foreground-muted').trim();
+		// const splitLineColor = styles.getPropertyValue('--foreground-muted').trim();
 		const pointColor = styles.getPropertyValue('--accent-yellow').trim();
 
 		const processedData = processOverlappingData(selectedSeason);
@@ -46,7 +46,8 @@
 				splitLine: {
 					lineStyle: {
 						type: 'dashed',
-						color: splitLineColor // ✅ CSS variable
+						// color: splitLineColor
+						color: '#333333'
 					}
 				},
 				axisLine: { show: false },
@@ -73,7 +74,8 @@
 				splitLine: {
 					lineStyle: {
 						type: 'dashed',
-						color: splitLineColor // ✅ CSS variable
+						// color: splitLineColor
+						color: '#333333'
 					}
 				},
 				axisLine: { show: false },
