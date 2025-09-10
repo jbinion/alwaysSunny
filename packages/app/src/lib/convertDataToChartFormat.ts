@@ -1,6 +1,6 @@
 import convertTimeToDecimal from './convertTimeToDecimal';
 import { getDayNumber } from './dayLabels';
-import episodes from '../../../episodes.json';
+import episodes from '../data/episodes.json';
 
 export type Episode = {
 	id: number;

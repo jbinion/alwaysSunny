@@ -14,20 +14,20 @@ A simple svelte app that visualizes the in universe start time and day for each 
 2. Install dependencies:
 
    ```bash
-   npm install
+   pnpm i
    ```
 
 3. Start the development server:
 
    ```bash
-   cd ./app && npm run dev
+   cd packages/app && npm run dev
    ```
 
 4. Open your browser to `http://localhost:5173`
 
 ## Data
 
-Episode data is stored in `episodes.json` and includes:
+Episode data is stored in `packages/episodes.json` and includes:
 
 - Episode title
 - Season and episode number

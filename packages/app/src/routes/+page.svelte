@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import * as echarts from 'echarts';
-	import episodes from '../../../episodes.json';
+	import episodes from '../data/episodes.json';
 	import { getDayString } from '$lib/dayLabels';
 	import { processOverlappingData, type Result } from '$lib/convertDataToChartFormat';
 	import Tooltip from '$lib/Tooltip';
@@ -18,12 +18,18 @@
 	onMount(() => {
 		chart = echarts.init(chartContainer);
 
+		// 🔹 Read CSS variables
+		const styles = getComputedStyle(document.documentElement);
+		// const axisLineColor = styles.getPropertyValue('--foreground-muted').trim();
+		// const splitLineColor = styles.getPropertyValue('--foreground-muted').trim();
+		const pointColor = styles.getPropertyValue('--accent-yellow').trim();
+
 		const processedData = processOverlappingData(selectedSeason);
+
 		const option = {
 			tooltip: {
 				trigger: 'item',
 				formatter: function (params: CallbackDataParams) {
-					console.log(params.data);
 					const data = params.data as Result;
 					const episodeData = episodes.find((x) => x.id === data.id);
 					if (!episodeData) return '';
@@ -40,16 +46,14 @@
 				splitLine: {
 					lineStyle: {
 						type: 'dashed',
+						// color: splitLineColor
 						color: '#333333'
 					}
 				},
-				axisLine: {
-					show: false
-				},
+				axisLine: { show: false },
 				axisLabel: {
-					formatter: function (value: number) {
+					formatter: (value: number) => {
 						const isSmall = window.innerWidth < 768;
-
 						if (isSmall) {
 							const shortDays = ['', 'S', 'M', 'T', 'W', 'T', 'F', 'S'];
 							return shortDays[value] || null;
@@ -70,14 +74,13 @@
 				splitLine: {
 					lineStyle: {
 						type: 'dashed',
+						// color: splitLineColor
 						color: '#333333'
 					}
 				},
-				axisLine: {
-					show: false
-				},
+				axisLine: { show: false },
 				axisLabel: {
-					formatter: function (value: number) {
+					formatter: (value: number) => {
 						if (value === 0) return '12:00 AM';
 						if (value === 12) return '12:00 PM';
 						if (value < 12) return `${value}:00 AM`;
@@ -85,14 +88,13 @@
 					}
 				}
 			},
-
 			series: [
 				{
 					name: 'Data Points',
 					type: 'scatter',
 					data: processedData,
 					symbolSize: 8,
-					color: '#fcdb00',
+					color: pointColor, // ✅ CSS variable
 					emphasis: {
 						itemStyle: {
 							opacity: 1,
