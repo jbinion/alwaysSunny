@@ -71,3 +71,11 @@ a.active {
 .title {
 	font-family: Textile, Arial, sans-serif;
 }
+
+.filterButton {
+	@apply cursor-pointer text-foreground-muted transition-colors hover:text-foreground;
+}
+
+.filterButton.active {
+	@apply border-b-2 border-foreground text-foreground;
+}
