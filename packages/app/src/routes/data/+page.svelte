@@ -1,6 +1,7 @@
 <script lang="ts">
 	import episodes from '../../data/episodes.json';
 	import EpisodeCard from '../../components/EpisodeCard.svelte';
+	import FilterButton from '../../components/FilterButton.svelte';
 	let sortMode: 'chrono' | 'day' | 'unknown' = 'chrono';
 	const dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
@@ -11,16 +12,28 @@
 				dayList.indexOf(a.startDay.toLowerCase()) - dayList.indexOf(b.startDay.toLowerCase())
 		);
 	const unknownDay = [...episodes].filter((x) => x.startDay === '');
-	const handleClick = (mode) => {
+	const handleClick = (mode: typeof sortMode) => {
 		sortMode = mode;
 	};
 </script>
 
-<div class="flex flex-col space-y-4 px-12 pb-12">
-	<div class="space-x-6">
-		<button on:click={() => handleClick('chrono')}>Chronological</button>
-		<button on:click={() => handleClick('day')}>By Day</button>
-		<button on:click={() => handleClick('unknown')}>Unknown Start Day</button>
+<div class="flex flex-col space-y-4 px-12 py-12">
+	<div class="mb-12 space-x-6">
+		<FilterButton
+			title="Chronological"
+			handleClick={() => handleClick('chrono')}
+			active={sortMode === 'chrono'}
+		/>
+		<FilterButton
+			title="By Day"
+			handleClick={() => handleClick('day')}
+			active={sortMode === 'day'}
+		/>
+		<FilterButton
+			title="Unknown Start Day"
+			handleClick={() => handleClick('unknown')}
+			active={sortMode === 'unknown'}
+		/>
 	</div>
 
 	{#if sortMode === 'chrono'}
